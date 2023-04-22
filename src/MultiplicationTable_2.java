@@ -32,19 +32,35 @@ public class MultiplicationTable_2 {
 //				System.out.printf("%d*%d=%d\n",i,n,(i*n));
 //			}
 //		}
+//		
+//		//while문을 사용해서 구구단 프로그래밍 해보기
+//		int i=1;
+//		int n=1;
+//		while (i<10)
+//		{
+//			while (n<10)
+//			{
+//				System.out.println(i*n);
+//				n++;
+//			}
+//			n=1;	//n의 숫자를 다시 1로 초기화를 해줘야 두번째 while문이 실행되므로!!! 꼭 초기화를 해줘야한다.
+//			i++;
+//		}
 		
-		//while문을 사용해서 구구단 프로그래밍 해보기
-		int i=1;
-		int n=1;
-		while (i<10)
+		//사용자가 입력한 숫자 값에 해당하는 단을 출력하나, 1이하 10이상이면 잘못된 입력값이라는 메시지를 출력한다.
+		System.out.println("구구단을 출력하겠습니다. 출력할 단을 입력하세요.");
+		Scanner scan = new Scanner(System.in);
+		int num = scan.nextInt();
+		if (num<2||num>10)
 		{
-			while (n<10)
+			System.out.println("2이상, 9이하의 숫자를 입력해주세요.");
+		}
+		else
+		{
+			for (int i=1;i<10;i++)
 			{
-				System.out.println(i*n);
-				n++;
+				System.out.printf("%d * %d = %d\n",num,i,num*i);
 			}
-			n=1;	//n의 숫자를 다시 1로 초기화를 해줘야 두번째 while문이 실행되므로!!! 꼭 초기화를 해줘야한다.
-			i++;
 		}
 	}
 }
