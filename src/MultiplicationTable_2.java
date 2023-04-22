@@ -46,21 +46,49 @@ public class MultiplicationTable_2 {
 //			n=1;	//n의 숫자를 다시 1로 초기화를 해줘야 두번째 while문이 실행되므로!!! 꼭 초기화를 해줘야한다.
 //			i++;
 //		}
+//		
+//		//사용자가 입력한 숫자 값에 해당하는 단을 출력하나, 1이하 10이상이면 잘못된 입력값이라는 메시지를 출력한다.
+//		System.out.println("구구단을 출력하겠습니다. 출력할 단을 입력하세요.");
+//		Scanner scan = new Scanner(System.in);
+//		int num = scan.nextInt();
+//		if (num<2||num>10)
+//		{
+//			System.out.println("2이상, 9이하의 숫자를 입력해주세요.");
+//		}
+//		else
+//		{
+//			for (int i=1;i<10;i++)
+//			{
+//				System.out.printf("%d * %d = %d\n",num,i,num*i);
+//			}
+//		}
+//		
+//		//배열을 활용해 구구단을 구현하는 경험을 한다.
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int[] result = new int[9];
+//		for(int i=0;i<result.length;i++)
+//		{
+//			//계산 결과를 배열에 저장
+//			result[i]=n*(i+1);
+//		}
+//		for (int i=0;i<result.length;i++)
+//		{
+//			//계산 결과를 화면에 출력
+//			System.out.println(result[i]);
+//		}
+//		//for문 안에 i=0 ; i<=result.length 로 하면 배열의 크기를 초과하기 때문에 (result[0~9]) <= >= 가 아니라 < > 로 해줘야한다.
 		
-		//사용자가 입력한 숫자 값에 해당하는 단을 출력하나, 1이하 10이상이면 잘못된 입력값이라는 메시지를 출력한다.
-		System.out.println("구구단을 출력하겠습니다. 출력할 단을 입력하세요.");
-		Scanner scan = new Scanner(System.in);
-		int num = scan.nextInt();
-		if (num<2||num>10)
+		//추가 요구사항 2~9단까지 배열을 사용하여 출력
+		int[] result = new int[9];
+		for (int j=2;j<10;j++)
 		{
-			System.out.println("2이상, 9이하의 숫자를 입력해주세요.");
-		}
-		else
-		{
-			for (int i=1;i<10;i++)
+			for(int i=0;i<result.length;i++)
 			{
-				System.out.printf("%d * %d = %d\n",num,i,num*i);
+				result[i]=j*(i+1);
+				System.out.println(result[i]);
 			}
+			System.out.println("--------------");
 		}
 	}
 }
