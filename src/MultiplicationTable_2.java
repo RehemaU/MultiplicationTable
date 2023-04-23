@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class MultiplicationTable_2 {
-	public static void main (String args[])
-	{
-		//그냥 강의 듣기 전에 써보는 코드
-		
+//	public static void main (String args[])
+//	{
+//		//그냥 강의 듣기 전에 써보는 코드
+//		
 //		//사용자에게 숫자를 입력받아 해당하는 숫자의 구구단을 출력하는 프로그램
 //		Scanner scan = new Scanner(System.in);
 //		System.out.println("숫자를 하나 입력해주세요.");
@@ -78,17 +78,54 @@ public class MultiplicationTable_2 {
 //			System.out.println(result[i]);
 //		}
 //		//for문 안에 i=0 ; i<=result.length 로 하면 배열의 크기를 초과하기 때문에 (result[0~9]) <= >= 가 아니라 < > 로 해줘야한다.
-		
-		//추가 요구사항 2~9단까지 배열을 사용하여 출력
-		int[] result = new int[9];
-		for (int j=2;j<10;j++)
-		{
-			for(int i=0;i<result.length;i++)
-			{
-				result[i]=j*(i+1);
-				System.out.println(result[i]);
-			}
-			System.out.println("--------------");
+//		
+//		//추가 요구사항 2~9단까지 배열을 사용하여 출력
+//		int[] result = new int[9];
+//		for (int j=2;j<10;j++)
+//		{
+//			for(int i=0;i<result.length;i++)
+//			{
+//				result[i]=j*(i+1);
+//				System.out.println(result[i]);
+//				System.out.println("--------------");
+//			}
+//		}
+//	}
+//	
+
+//	public static int[] calculate(int times) {
+//		int[] result = new int[9];
+//		for (int i=0;i<result.length;i++) {
+			//계산 결과를 배열에 저장
+//			result[i]=i*(i+1); //너무 멍청하죠? 이러면 0*1 1*2 2*3 이 되죠?
+//			result[i]=times*(i+1); //times를 괜히 받아오는게 아니죠?
+//		}
+//		return result;
+//	}
+//	
+//	public static void print(int[] result) {
+//		for (int i=0;i<result.length;i++) {
+//			//계산 결과를 화면에 출력
+//			System.out.println(result[i]);
+//		}
+//	}
+//	
+//	public static void main(String[] args) {
+//		for (int j=2;j<10;j++) {
+//			//calculate와 print 메서드 활용해 구구단 구현하기
+//			int[] gugudan = calculate(j);
+//			print(gugudan);
+//			System.out.println();
+//		}
+//	}
+	
+	//클래스를 활용하여 구구단 다시 구현
+	public static void main(String[] args) {
+		for (int j=2;j<10;j++) {
+			//멀티플테이블에서 구현한 calculate와 print 메서드를 호출해서 여기서 구현해보기
+			int[] gugudan = MultiplicationTable_1.calculate(j);
+			MultiplicationTable_1.print(gugudan);
+			System.out.println();
 		}
 	}
 }
